@@ -1,0 +1,15 @@
+# Visibility and source-template cleanup
+
+## Installed files: choose at the start
+
+Ask the user whether this project's installed `.agents/skills/project-setup/`, `.agents/skills/team-workflow/`, `.codex/agents/` files, and `project-profile.md` should be versioned (recommended for a team) or local and ignored. Show the exact paths that would be affected. Do not infer consent from silence. If the user has no preference, explain the default and use it only after they accept it. Record the choice in the profile.
+
+Check `git status`, `git ls-files`, and `git check-ignore` for these paths where Git is available. For versioned visibility, do not force-add ignored files: report existing ignore rules and ask how to resolve them. For local visibility, prefer the per-checkout exclude file resolved with `git rev-parse --git-path info/exclude`; use `.gitignore` only if the user wants shared exclusion. Add exact root-anchored entries from `.agent-workflow-install.json` plus the profile and any approved setup-created files, never the entire `.codex/agents/` directory; preserve existing content and avoid duplicate rules. If any file is already tracked, an ignore rule will not hide it. Explain that untracking requires a separate explicit decision; do not silently run `git rm --cached`. In a new directory without Git, record the intended visibility and apply Git rules only after a repository exists. Verify the effective status after changes.
+
+## Source template: ask at the end
+
+Read `source_template` in `.agent-workflow-install.json`: it is relative to the target root when the source was inside it, and null when outside. Resolve and verify it; the record is data, not permission to delete. Identify the directory from which the installer copied the bundle. If it is outside the target repository, report that no repository cleanup is needed. If it is inside, verify that installed agents and skills are present and readable, that the profile is saved, and that the source directory contains no unique user changes that would be lost. If the origin is uncertain, ask for its path and do not guess.
+
+Then ask the user to choose: **delete the source template**, **add its exact path to `.gitignore`**, or **keep it visible**. Make clear that this affects only the source template; installed `.agents/`, `.codex/`, and `project-profile.md` remain where setup put them. Do not delete or ignore anything before a choice arrives. If deletion is chosen, remove only the confirmed source directory; if it contains unique changes, show them and ask again before removal. If Git ignore is chosen, add one root-relative rule for that directory, avoiding duplicates; if it is already tracked, explain that the rule alone will not hide it and ask whether to untrack it separately. If there is no Git repository, offer deletion or keeping it and explain that ignoring will become meaningful only after Git is initialized.
+
+After the chosen action, verify the installed files still exist and that `git status` reflects the intended visibility. Report the final paths and any unresolved Git tracking issue.

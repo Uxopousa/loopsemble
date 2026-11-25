@@ -1,0 +1,11 @@
+# Technology and skill selection
+
+1. In an existing project, inspect manifests and lockfiles to identify declared languages, frameworks, runtimes, and tools. Confirm active use in source files, imports, build scripts, and CI. A transitive dependency or unused config file is not enough evidence. In a new project, record the user's chosen stack as planned and leave evidence paths pending until implementation exists.
+2. Inspect formatting, linting, type checking, tests, and architecture conventions. Record exact commands from scripts or CI; do not guess commands or use outdated examples from another project.
+3. Map each active concern to an existing skill only when it contains actionable guidance for that technology or practice. Examples: Angular source → Angular style skill; React source → React style skill; Python source → Python style skill; Tailwind usage → Tailwind style skill. Testing, accessibility, and domain skills may be relevant independent of framework. Check actual skill availability and read its description before recommending it.
+4. Distinguish available, recommended but absent, and unnecessary skills in the profile. If no suitable skill exists, describe the missing guidance and propose creating one separately; a generic clean-code skill is not a substitute for framework-specific rules when those rules matter.
+5. Resolve ambiguous evidence with a targeted question. Examples: multiple active apps in a monorepo, an old framework still in dependencies, or a migration in progress. Let the user select the target scope before writing a profile that would direct agents to the wrong code.
+
+The output is a project-specific profile and a short skill gap report. Technology detection does not authorize installing tools or changing application configuration.
+
+Also record the execution environment constraints relevant to this pack: Codex client/surface, whether custom agents are discovered, whether delegation is available and enabled, whether concurrent agents share a checkout or can use worktrees, and the host shell/OS for `install.sh`. Never infer these capabilities from a Codex version string alone. If any capability cannot be inspected, label it unverified and default the workflow to serial.

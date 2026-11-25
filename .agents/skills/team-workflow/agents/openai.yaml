@@ -1,0 +1,6 @@
+interface:
+  display_name: 'Team Workflow'
+  short_description: 'Coordinate approved serial or parallel agent work'
+  default_prompt: 'Use $team-workflow to coordinate this project task.'
+policy:
+  allow_implicit_invocation: true

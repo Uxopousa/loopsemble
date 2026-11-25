@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Systematic Debugging'
+  short_description: 'Diagnóstico por evidencia y verificación focalizada'
+  default_prompt: 'Usa $systematic-debugging para investigar este fallo dentro del alcance autorizado.'

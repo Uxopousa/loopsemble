@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Accessibility'
+  short_description: 'Semántica, teclado, foco y accesibilidad web'
+  default_prompt: 'Usa $accessibility para esta tarea dentro del alcance aprobado.'

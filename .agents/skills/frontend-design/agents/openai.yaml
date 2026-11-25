@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Frontend Design'
+  short_description: 'Diseño de interfaces y estados utilizables'
+  default_prompt: 'Usa $frontend-design para esta tarea dentro del alcance aprobado.'

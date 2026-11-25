@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Clean Code and Architecture'
+  short_description: 'Código claro y arquitectura proporcionada'
+  default_prompt: 'Usa $clean-code-architecture para esta tarea dentro del alcance aprobado.'

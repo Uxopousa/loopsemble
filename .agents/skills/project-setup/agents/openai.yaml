@@ -1,0 +1,6 @@
+interface:
+  display_name: 'Project Setup'
+  short_description: 'Detect stack and configure the team workflow'
+  default_prompt: 'Use $project-setup to configure this project for the team workflow.'
+policy:
+  allow_implicit_invocation: false

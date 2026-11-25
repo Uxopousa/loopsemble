@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Angular Guidelines'
+  short_description: 'Convenciones compatibles con Angular 21'
+  default_prompt: 'Usa $angular-guidelines para esta tarea dentro del alcance aprobado.'

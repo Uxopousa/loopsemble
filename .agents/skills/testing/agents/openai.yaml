@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Testing'
+  short_description: 'Pruebas de comportamiento según el proyecto'
+  default_prompt: 'Usa $testing para esta tarea dentro del alcance aprobado.'
